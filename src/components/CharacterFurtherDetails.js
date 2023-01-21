@@ -1,5 +1,5 @@
 import React from "react";
-import CharacterOverview from "./CharacterOverview";
+import CharacterOverview from "./Character";
 
 const CharacterDetails = ({character}) => {
     return <ul>{character.name}</ul>

@@ -1,18 +1,20 @@
 import React from "react";
-import CharacterOverview from "./CharacterOverview";
+import Character from "./Character";
 
 const CharacterList = ({characters}) => {
 
     const characterItems = characters.map(character => {
-        return <CharacterOverview key={character.id} character={character}>{character.name}</CharacterOverview>
+        return <Character key={character.id} character={character}>{character.name}</Character>
     })
 
     return (
         <>
-        {characterItems}
+        <ol>{characterItems}</ol>
         </>
     )
 }
+
+// Character picturex
 
 
 export default CharacterList
