@@ -4,6 +4,7 @@ import CharacterList from "../components/CharacterList";
 const CharacterBox = () => {
 
     const [characters, setCharacters] = useState([])
+    const [selectedCharacter, setSelectedCharacter] = useState("")
 
 
     const fetchCharacters = () => {
@@ -17,13 +18,13 @@ const CharacterBox = () => {
         console.log("fetched") 
     }, [])
   
-    // const characterItems = characters.map(character => {
-    //   return <li key = {character.id}>{character.name}</li>
-    // })
+    const onCharacterSelected = function (character) {
+        setSelectedCharacter(character)
+    }
   
     return (
         <>
-        <CharacterList characters={characters} ></CharacterList>
+        <CharacterList characters={characters} onCharacterSelected={onCharacterSelected}></CharacterList>
         </>
     )
 }

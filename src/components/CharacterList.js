@@ -1,15 +1,21 @@
 import React from "react";
 import Character from "./Character";
 
-const CharacterList = ({characters}) => {
+const CharacterList = ({characters, onCharacterSelected}) => {
 
-    const characterItems = characters.map(character => {
+    // const selectCharacter = function(evt) {
+    //     const chosenCharacter = characters[evt.target.value]
+    //     onCharacterSelected(chosenCharacter)
+    // }
+
+    const characterItems = characters.map((character) => {
         return <Character key={character.id} character={character}>{character.name}</Character>
     })
 
     return (
         <>
         <ol>{characterItems}</ol>
+        {/* <ol onClick={selectCharacter}>{characterItems}</ol> */}
         </>
     )
 }
